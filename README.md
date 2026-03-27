@@ -7,6 +7,7 @@ SBIR 計畫書撰寫知識系統。
 ```
 sbir-team/
 ├── agents/
+│   ├── sbir-orchestrator.md    # 調度 Agent：接收指令、調度流程、暫停等人類確認
 │   ├── sbir-pm.md               # PM Agent：資格篩選、構想驗證、資料檢查、流程優化
 │   ├── sbir-writer.md           # 撰寫 Agent：計畫書生成、待補清單
 │   └── sbir-reviewer.md        # 審查 Agent：六維評分、改善建議、客戶補充事項
@@ -42,6 +43,7 @@ sbir-team/
 
 ## 運作方式
 
+0. **sbir-orchestrator** — 接收使用者指令，依序調度下列三個 agent，每輪審查後暫停等人類確認
 1. **sbir-pm** — PM 提交客戶資訊，進行資格篩選、構想驗證、資料完整性檢查。也負責根據使用者回饋優化整個系統（optimize-flow）
 2. **sbir-writer** — 接收資料（不一定完整），生成計畫書草稿 + 待補清單
 3. **sbir-reviewer** — 六維評分 + 改善建議 + 客戶補充事項（白話建議，人類可直接拿去跟客戶溝通）
